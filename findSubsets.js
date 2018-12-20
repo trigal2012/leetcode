@@ -15,3 +15,11 @@
 *   []
 * ]
 */
+function getAllSubsets (nums){ 
+      var theArray = nums.reduce(
+      	(subsets, value) => subsets.concat(subsets.map(set => [value,...set]))
+      	,[[]]);
+
+      return theArray;
+}
+console.log(getAllSubsets([3,5,7]));
